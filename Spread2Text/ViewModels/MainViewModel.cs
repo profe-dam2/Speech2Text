@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Threading.Tasks;
+using Android.Media;
+using Avalonia;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Spread2Text.Services;
@@ -21,8 +24,8 @@ public partial class MainViewModel : ViewModelBase
                 return;
             }
             
-            new AndroidAudioPlayer()
-                .PlayFromAsset("avares://Spread2Text/Assets/record.mp3");
+             new AndroidAudioPlayer()
+                 .PlayFromAsset("avares://Spread2Text/Assets/record.mp3");
 
 
             
@@ -31,14 +34,20 @@ public partial class MainViewModel : ViewModelBase
 
             Text = "Escuchando…";
             Text = await AppServices.SttService.TranscribeAsync(audio);
-            new AndroidAudioPlayer()
-                .PlayFromAsset("avares://Spread2Text/Assets/endrecord.mp3");
+
+             new AndroidAudioPlayer()
+                 .PlayFromAsset("avares://Spread2Text/Assets/endrecord.mp3");
         }
         catch (Exception ex)
         {
             Text = "ERROR: " + ex.GetType().Name;
             Console.WriteLine(ex);
         }
+        
+        
+        
     }
+    
+    
 
 }

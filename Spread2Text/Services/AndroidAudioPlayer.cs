@@ -1,12 +1,9 @@
 ﻿using System;
 using System.IO;
-using Avalonia;
+using Android.Media;
 using Avalonia.Platform;
 
 namespace Spread2Text.Services;
-
-
-using Android.Media;
 
 public class AndroidAudioPlayer
 {
