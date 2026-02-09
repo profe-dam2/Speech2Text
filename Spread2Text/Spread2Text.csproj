@@ -21,13 +21,12 @@
         </PackageReference>
         <PackageReference Include="CommunityToolkit.Mvvm" />
     </ItemGroup>
-
     <ItemGroup>
-      <Reference Include="Java.Interop">
-        <HintPath>..\..\..\..\..\Program Files\dotnet\packs\Microsoft.Android.Ref.36\36.1.12\ref\net10.0\Java.Interop.dll</HintPath>
-      </Reference>
-      <Reference Include="Mono.Android">
-        <HintPath>..\..\..\..\..\Program Files\dotnet\packs\Microsoft.Android.Ref.36\36.1.12\ref\net10.0\Mono.Android.dll</HintPath>
-      </Reference>
+        <Reference Include="Java.Interop">
+            <HintPath>..\..\..\..\..\Program Files\dotnet\packs\Microsoft.Android.Ref.36\36.1.12\ref\net10.0\Java.Interop.dll</HintPath>
+        </Reference>
+        <Reference Include="Mono.Android">
+            <HintPath>..\..\..\..\..\Program Files\dotnet\packs\Microsoft.Android.Ref.36\36.1.12\ref\net10.0\Mono.Android.dll</HintPath>
+        </Reference>
     </ItemGroup>
 </Project>

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
-using Android.Media;
 using Avalonia;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -15,7 +14,8 @@ public partial class MainViewModel : ViewModelBase
     
     [RelayCommand]
     public async Task RecordAsync()
-    {
+    {   
+   
         try
         {
             if (!await AppServices.MicrophonePermission.EnsurePermissionAsync())
@@ -24,9 +24,8 @@ public partial class MainViewModel : ViewModelBase
                 return;
             }
             
-             new AndroidAudioPlayer()
-                 .PlayFromAsset("avares://Spread2Text/Assets/record.mp3");
-
+            AppServices.AudioPlayer
+                .PlayFromAsset("avares://Spread2Text/Assets/endrecord.mp3");
 
             
             Text = "Preparando…";
@@ -35,8 +34,10 @@ public partial class MainViewModel : ViewModelBase
             Text = "Escuchando…";
             Text = await AppServices.SttService.TranscribeAsync(audio);
 
-             new AndroidAudioPlayer()
-                 .PlayFromAsset("avares://Spread2Text/Assets/endrecord.mp3");
+            AppServices.AudioPlayer
+                .PlayFromAsset("avares://Spread2Text/Assets/record.mp3");
+
+
         }
         catch (Exception ex)
         {
@@ -44,7 +45,7 @@ public partial class MainViewModel : ViewModelBase
             Console.WriteLine(ex);
         }
         
-        
+
         
     }
     

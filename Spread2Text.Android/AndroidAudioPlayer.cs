@@ -1,11 +1,13 @@
-﻿using System;
+﻿
+using System;
 using System.IO;
+using Android.App;
 using Android.Media;
 using Avalonia.Platform;
 
 namespace Spread2Text.Services;
 
-public class AndroidAudioPlayer
+public class AndroidAudioPlayer: IAudioPlayer
 {
     public void PlayFromAsset(string avaresPath)
     {
@@ -13,7 +15,7 @@ public class AndroidAudioPlayer
             AssetLoader.Open(new Uri(avaresPath));
 
         var tempPath = Path.Combine(
-            Android.App.Application.Context.CacheDir!.AbsolutePath,
+            Application.Context.CacheDir!.AbsolutePath,
             "temp.mp3");
 
         using (var file = File.Create(tempPath))

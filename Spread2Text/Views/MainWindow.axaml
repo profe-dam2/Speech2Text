@@ -3,10 +3,11 @@
         xmlns:vm="using:Spread2Text.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:views="using:Spread2Text.Views"
+        xmlns:views="using:Spread2Text.Views" Width="1920" Height="1080"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        
         x:Class="Spread2Text.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
-        Title="Spread2Text">
+        Title="Spread2Text" WindowState="FullScreen">
         <views:MainView />
 </Window>

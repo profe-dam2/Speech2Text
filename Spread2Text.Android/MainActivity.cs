@@ -28,6 +28,9 @@ public class MainActivity : AvaloniaMainActivity<App>
     {
         base.OnCreate(savedInstanceState);
 
+        AppServices.AudioPlayer = new AndroidAudioPlayer();
+
+        
         AppServices.MicrophonePermission =
             new AndroidMicrophonePermissionService(this);
 
